@@ -1,4 +1,119 @@
-<!DOCTYPE html>
+<x-app-layout>
+    {{-- SECCION DEL HOME --}}
+    <section class="bg-cover" style="background-image: url({{asset('img/home/people-g048545376_1920.jpg')}})">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
+            <div class="w-full md:w-3/4 lg:w-1/2">
+                <h1 class="text-white font-extrabold text-4xl">EMPIEZA UNA NUEVA ERA CON VIRTUAL CLASS ROOM | VCR</h1>
+                <p class="text-white text-lg mt-2 mb-4">no te quedes atras y actualizate con VCR</p>
+                
+                <!-- component -->
+                <!-- This is an example component -->
+                    <div class="pt-2 relative mx-auto text-gray-600">
+                        <input class="w-full border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                        type="search" name="search" placeholder="Search">
+
+                        <button type="submit" class="p-1 pl-5 pr-5 bg-transparent border-2 border-red-500 text-red-500 text-lg rounded-lg hover:bg-red-500 hover:text-gray-100 focus:border-4 focus:border-red-300 absolute right-0 top-0 mt-2">
+                            Buscar
+                        </button>
+
+                        {{-- <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                            <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                                viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+                                width="512px" height="512px">
+                                <path
+                                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                            </svg>
+                        </button> --}}
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- SECCION DE CONTENIDOS --}}
+    <section class="mt-24">
+        <h1 class="text-gray-600 text-center text-3xl mb-6">CONTENIDO</h1>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
+            <article>
+                <figure>
+                    <img class="rounded-xl h-36 w-full object-cover" src="{{asset('img/home/dog-g0a30e3d7f_640.jpg')}}" alt="">
+                </figure>
+
+                <header class="mt-2">
+                    <h1 class="text-center text-xl text-gray-700">Cursos</h1>
+                </header>
+
+                <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatem temporibus adipisci nulla.</p>
+
+            </article>
+            <article>
+                <figure>
+                    <img class="rounded-xl h-36 w-full object-cover" src="{{asset('img/home/kangaroo-gc4af5b6a2_640.jpg')}}" alt="">
+                </figure>
+
+                <header class="mt-2">
+                    <h1 class="text-center text-xl text-gray-700">Manuales</h1>
+                </header>
+
+                <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatem temporibus adipisci nulla.</p>
+
+            </article>
+            <article>
+                <figure>
+                    <img class="rounded-xl h-36 w-full object-cover" src="{{asset('img/home/greenfinch-gcc87bf6ec_640.jpg')}}" alt="">
+                </figure>
+
+                <header class="mt-2">
+                    <h1 class="text-center text-xl text-gray-700">Blog</h1>
+                </header>
+
+                <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatem temporibus adipisci nulla.</p>
+
+            </article>
+            <article>
+                <figure>
+                    <img class="rounded-xl h-36 w-full object-cover" src="{{asset('img/home/persian-g8a8afdda9_640.jpg')}}" alt="">
+                </figure>
+
+                <header class="mt-2">
+                    <h1 class="text-center text-xl text-gray-700">Temarios</h1>
+                </header>
+
+                <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatem temporibus adipisci nulla.</p>
+
+            </article>
+        </div>
+    </section>
+
+    {{-- SECION DE CATALOGOS --}}
+    <section class="mt-24 bg-gray-700 py-12">
+        <h1 class="text-center text-white text-3xl">¿No sabes qué curso llevar?</h1>
+        <p class="text-center text-white">Dirígete al catálogo de cursos y filtralos por categoría o nivel</p>
+        <div class="flex justify-center mt-4">
+            <a href="{{route('courses.index')}}" class="p-2 pl-5 pr-5 transition-colors duration-700 transform bg-red-500 hover:bg-red-400 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">
+                Catálogo de Cursos
+            </a>
+        </div>
+    </section>
+
+    {{-- SECCION DE ULTIMOS CURSOS --}}
+    <section class="mt-24">
+        <h1 class="text-center text-3xl text-gray-600">ÚLTIMOS CURSOS</h1>
+        <p class="text-center text-gray-500 text-sm mb-6">Actualizate con VCR, no te quedes atras. Apurate ALEXIS</p>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-4 gap-x-6 gap-y-8">
+
+            {{-- @foreach ($courses as $course)
+                <article>
+                    {{$course->image->url}}
+                </article>
+            @endforeach --}}
+
+        </div>
+    </section>
+</x-app-layout>
+
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -129,4 +244,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> --}}
