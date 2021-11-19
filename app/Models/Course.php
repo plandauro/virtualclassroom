@@ -18,6 +18,24 @@ class Course extends Model
         return $this->hasMany('App\Models\Review');
     }
 
+    public function requirements(){
+        return $this->hasMany('App\Models\Requirement');
+    }
+
+    public function goals(){
+        return $this->hasMany('App\Models\Goal');
+    }
+
+    public function audiences(){
+        return $this->hasMany('App\Models\Audience');
+    }
+
+    public function unities(){
+        return $this->hasMany('App\Models\Unity');
+    }
+
+
+
     //Relation one to many reverse
     public function teacher(){
         return $this->belongsTo('App\Models\User', 'user_id');
