@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Platform extends Model
+class Resource extends Model
 {
     use HasFactory;
 
-    //Relation one to many
-    public function lessons(){
-        return $this->hasMany('App\Models\Lesson');
+    public function resourceable(){
+        return $this->morphTo();
     }
-
 }

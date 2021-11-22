@@ -9,6 +9,11 @@ class Unity extends Model
 {
     use HasFactory;
 
+    //Relation one to many
+    public function lessons(){
+        return $this->hasMany('App\Models\Lesson');
+    }
+
     //Relation one to many reverse
     public function course(){
         return $this->belongsTo('App\Models\Course');

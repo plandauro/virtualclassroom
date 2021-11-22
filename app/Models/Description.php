@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Description extends Model
 {
     use HasFactory;
+
+    //Relation one to one reverse
+    public function lesson(){
+        return $this->belongsTo('App\Models\Lesson');
+    }
 }

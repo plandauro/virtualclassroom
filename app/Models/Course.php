@@ -60,4 +60,14 @@ class Course extends Model
         return $this->belongsToMany('App\Models\User');
     }
 
+    //Relation one to one polymorph
+    public function image(){
+        return $this->morphOne('App\Models\Image', 'imageable');
+    }
+
+    //Relation Many Through - two parameters: final table, intermediate table
+    public function lesson(){
+        return $this->hasManyThrough('App\Models\Lesson', 'App\Models\Unity');
+    }
+
 }
