@@ -16,6 +16,7 @@ class CreateReactionsTable extends Migration
     public function up()
     {
         Schema::create('reactions', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
 
             $table->enum('value',[Reaction::LIKE, Reaction::DISLIKE]);
