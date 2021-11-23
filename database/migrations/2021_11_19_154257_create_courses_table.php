@@ -30,12 +30,14 @@ class CreateCoursesTable extends Migration
             $table->unsignedBigInteger('area_id')->nullable();
             $table->unsignedBigInteger('grade_id')->nullable();
             $table->unsignedBigInteger('price_id')->nullable();
+            $table->unsignedBigInteger('level_id')->nullable();
 
             //Restriction foreign keys
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('set null');
             $table->foreign('grade_id')->references('id')->on('grades')->onDelete('set null');
             $table->foreign('price_id')->references('id')->on('prices')->onDelete('set null');
+            $table->foreign('level_id')->references('id')->on('levels')->onDelete('set null');
 
             $table->timestamps();
         });

@@ -53,6 +53,10 @@ class Course extends Model
         return $this->belongsTo('App\Models\Price');
     }
 
+    public function level(){
+        return $this->belongsTo('App\Models\Level');
+    }
+
 
 
     //Relation many to many
