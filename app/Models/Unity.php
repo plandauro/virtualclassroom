@@ -9,6 +9,8 @@ class Unity extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     //Relation one to many
     public function lessons(){
         return $this->hasMany('App\Models\Lesson');
