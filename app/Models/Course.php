@@ -10,6 +10,7 @@ class Course extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    // protected $withcCount = ['student']; //CANTIDAD DE ESTUDIANTES POR CURSO
 
     const BORRADOR = 1;
     const REVISION = 2;
