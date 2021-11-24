@@ -10,11 +10,28 @@ class Course extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    // protected $withcCount = ['student']; //CANTIDAD DE ESTUDIANTES POR CURSO
+    protected $withCount = ['student', 'review']; //CANTIDAD DE ESTUDIANTES POR CURSO
 
     const BORRADOR = 1;
     const REVISION = 2;
     const PUBLICADO = 3;
+
+    // metodo para calificacion por alumnos
+    public function getRatingAttribute(){
+
+        //COLOCAREMOS UNA CONDICIONAL PARA RATING MINIMO
+        if($this->review_count){
+            return round($this->review->avg('rating'), 1); //metodo avg es para los promedios //UTILIZAMOS ROUND PARA REDONDEAR DECIRMALES
+        }else{
+            return 5;
+        }
+    }
+
+    //METODO PARA UTILIZAR EL SLUG EN LA URL
+    public function getRouteKeyName(){
+        
+        return "slug";
+    }
 
     //Relation one to many
     public function review(){

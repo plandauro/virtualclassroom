@@ -6,6 +6,11 @@
             'active' => request()->routeIs('home')
         ],
         [
+            'name' => 'Cursos',
+            'route' => route('courses.index'),
+            'active' => request()->routeIs('courses.index')
+        ],
+        [
             'name' => 'Pruebita',
             'route' => '#',
             'active' => false
