@@ -27,6 +27,30 @@ class Course extends Model
         }
     }
 
+    // METODO UTILIZANDO QUERYS SCOPES
+
+    // METODO PARA AREAS = CATEGORY
+    public function scopeArea($query, $area_id){
+        if($area_id){
+            return $query->where('area_id', $area_id);
+        }
+    }
+
+    // METODO PARA LEVELS
+    public function scopeLevel($query, $level_id){
+        if($level_id){
+            return $query->where('area_id', $level_id);
+        }
+    }
+
+    // METODO PARA GRADES
+    public function scopeGrade($query, $grade_id){
+        if($grade_id){
+            return $query->where('area_id', $grade_id);
+        }
+    }
+
+
     //METODO PARA UTILIZAR EL SLUG EN LA URL
     public function getRouteKeyName(){
         
