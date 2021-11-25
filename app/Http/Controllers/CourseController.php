@@ -13,6 +13,14 @@ class CourseController extends Controller
     }
 
     public function show(Course $course){
-        return view('courses.show', compact('course'));
+
+        $similares  = Course::where('area_id', $course->area_id)
+                                ->where('id', '!=', $course->id)
+                                ->where('status', 3)
+                                ->latest('id')
+                                ->take(5)
+                                ->get();
+
+        return view('courses.show', compact('course', 'similares'));
     }
 }
