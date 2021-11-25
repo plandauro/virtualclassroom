@@ -91,7 +91,7 @@
                     </div>
                     @can('enrolled', $course)
 
-                        <a class="btn btn-continue btn-block mt-4" href="{{route('course.status', $course)}}">Continuar con el Curso</a>
+                        <a class="btn btn-continue btn-block mt-4" href="{{route('courses.status', $course)}}">Continuar con el Curso</a>
 
                     @else
                         <form action="{{route('courses.enrolled', $course)}}" method="POST">

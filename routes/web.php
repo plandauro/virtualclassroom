@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
-
+use App\Http\Livewire\CourseStatus;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +30,5 @@ Route::get('cursos/{course}', [CourseController::class, 'show'])->name('courses.
 Route::post('courses/{course}/enrolled', [CourseController::class, 'enrolled'])->middleware('auth')->name('courses.enrolled');
 
 // RUTA PARA LLEVAR EL CURSO
-Route::get('course-status/{course}', function ($course) {
-    return "aqui vas a poder llevar control de avance";
-})->name('course.status');
+Route::get('course-status/{course}', CourseStatus::class)->name('courses.status');
 
