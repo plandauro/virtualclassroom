@@ -23,6 +23,10 @@
     @apply p-2 pl-5 pr-5 transition-colors duration-700 transform bg-red-500 hover:bg-red-400 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300;
 }
 
+.btn-continue{
+    @apply p-2 pl-5 pr-5 transition-colors duration-700 transform bg-green-500 hover:bg-green-400 text-gray-100 text-lg rounded-lg focus:border-4 border-green-300;
+}
+
 .btn-blue:hover{
     @apply bg-blue-700;
 }

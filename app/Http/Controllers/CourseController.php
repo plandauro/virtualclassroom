@@ -23,4 +23,13 @@ class CourseController extends Controller
 
         return view('courses.show', compact('course', 'similares'));
     }
+
+    public function enrolled(Course $course){
+        
+        // RECUPERANDO RELACION MUCHOS A MUCHOS -> GREGANDO REGISTRO DE QUIEN LLEVA EL CURSO
+        $course->student()->attach(auth()->user()->id);
+
+        //REDIRIGIENTO A LA RUTA
+        return redirect()->route('course.status', $course);
+    }
 }

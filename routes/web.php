@@ -26,3 +26,11 @@ Route::get('cursos', [CourseController::class, 'index'])->name('courses.index');
 
 Route::get('cursos/{course}', [CourseController::class, 'show'])->name('courses.show');
 
+// RUTA PARA MATRICULAR USUARIO
+Route::post('courses/{course}/enrolled', [CourseController::class, 'enrolled'])->middleware('auth')->name('courses.enrolled');
+
+// RUTA PARA LLEVAR EL CURSO
+Route::get('course-status/{course}', function ($course) {
+    return "aqui vas a poder llevar control de avance";
+})->name('course.status');
+

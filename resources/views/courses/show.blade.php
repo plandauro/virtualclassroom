@@ -18,6 +18,7 @@
         </div>
     </section>
 
+    {{-- SECCION DE INFORMACION Y CURSOS --}}
     <div class="container grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         <div class="order-2 lg:col-span-2 lg:order-1">
@@ -88,7 +89,16 @@
                             <a class="text-blue-400 text-sm font-bold" href="">{{'@' . Str::slug($course->teacher->name, '')}}</a>
                         </div>
                     </div>
-                    <a class="btn btn-danger2 btn-block mt-4" href="">Llevar Curso</a>
+                    @can('enrolled', $course)
+
+                        <a class="btn btn-continue btn-block mt-4" href="{{route('course.status', $course)}}">Continuar con el Curso</a>
+
+                    @else
+                        <form action="{{route('courses.enrolled', $course)}}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger2 btn-block mt-4" type="submit">Llevar Curso</button>
+                        </form>
+                    @endcan                    
                 </div>
             </section>
 
