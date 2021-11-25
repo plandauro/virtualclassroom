@@ -30,7 +30,7 @@
             <!-- Dropdown  NIVELES-->
             <div class="relative mr-4" x-data="{ open: false }">
                 <button class="px-4 text-gray-700 block h-12 rounded-lg overflow-hidden focus:outline-none bg-white shadow" x-on:click="open = true"> <!-- en el metodo x-on:click puede !open o puede ser true si se usa x-on:click.away -->
-                    <i class="fas fa-layer-group text-sm mr-2"></i>
+                    <i class="fas fa-chart-line text-sm mr-2"></i>
                     Niveles
                     <i class="fas fa-angle-down text-sm ml-2"></i>
                 </button>
