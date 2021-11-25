@@ -1833,6 +1833,9 @@ select {
 .leading-6 {
 	line-height: 1.5rem;
 }
+.leading-10 {
+	line-height: 2.5rem;
+}
 .tracking-widest {
 	letter-spacing: 0.1em;
 }
@@ -2205,6 +2208,10 @@ select {
 .hover\:bg-purple-500:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(139, 92, 246, var(--tw-bg-opacity));
+}
+.hover\:bg-gray-300:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
 	--tw-text-opacity: 1;
