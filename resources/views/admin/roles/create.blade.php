@@ -1,4 +1,5 @@
-@extends('adminlte::page')
+@extends('adminlte::partials.cwrapper.cwrapper-default')
+{{-- @extends('adminlte::page') --}}
 
 @section('title', 'VirtualClassRoom')
 
