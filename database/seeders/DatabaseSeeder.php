@@ -18,6 +18,12 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('public/cursos');
         Storage::makeDirectory('public/cursos');
 
+        //agregador para los permisos, con laravel PERMISSION
+        $this->call(PermissionSeeder::class);
+
+        $this->call(RoleSeeder::class);
+        //agregador para los permisos, con laravel PERMISSION
+
         $this->call(UserSeeder::class);
 
         $this->call(AreaSeeder::class);
@@ -31,5 +37,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PlatformSeeder::class);
 
         $this->call(CourseSeeder::class);
+
+
     }
 }

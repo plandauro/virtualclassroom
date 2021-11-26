@@ -1,5 +1,5 @@
-@extends('adminlte::partials.cwrapper.cwrapper-default')
-{{-- @extends('adminlte::page') --}}
+@extends('adminlte::page')
+{{-- @extends('adminlte::partials.cwrapper.cwrapper-default') --}}
 
 @section('title', 'VirtualClassRoom')
 
@@ -8,25 +8,15 @@
 @stop
 
 @section('content')
-   <div class="card">
+    <div class="card">
         <div class="card-body">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th colspan="2"></th>
-                </tr>
-            </thead>
+            {!! Form::open(['route' => 'admin.roles.store']) !!}
+                @include('admin.roles.partials.form')
 
-            <tbody>
-                @forelse ($collection as $item)
-                    
-                @empty
-                    
-                @endforelse
-            </tbody>
+                {!! Form::submit('Crear Roles', ['class'=> 'btn btn-primary mt-2']) !!}
+            {!! Form::close() !!}
         </div>
-   </div>
+    </div>   
 @stop
 
 @section('css')
