@@ -10,7 +10,7 @@ use App\Models\Grade; //AGREGADO PARA FILTRAR
 
 use Livewire\WithPagination;
 
-class CourseIndex extends Component
+class CoursesIndex extends Component
 {
 
     use WithPagination; //UTILIZADO PARA REALIZAR PAGINACION DINAMICA
@@ -35,7 +35,7 @@ class CourseIndex extends Component
                         ->latest('id')
                         ->paginate(8);
 
-        return view('livewire.course-index', compact('courses', 'areas', 'levels', 'grades'));
+        return view('livewire.courses-index', compact('courses', 'areas', 'levels', 'grades'));
     }
 
     //PARA RESTEAR FILTROS

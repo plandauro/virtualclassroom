@@ -14,6 +14,6 @@
     </section>
 
     {{-- USANDO DIRECTIVAS DE LIVEWIRE --}}
-    @livewire('course-index') <!-- este componente renderiza la vista course-index -->
+    @livewire('courses-index') <!-- este componente renderiza la vista course-index -->
     
 </x-app-layout>
