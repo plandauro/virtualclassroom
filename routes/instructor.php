@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Instructor\CourseController;
+use App\Http\Livewire\Instructor\CoursesCurriculum;
 // use App\Http\Livewire\InstructorCourses; //ESTO SE ELIMINAR, REOOGANIZANDO RUTAS
 
 Route::redirect('', 'instructor/courses');
@@ -12,3 +13,5 @@ Route::redirect('', 'instructor/courses');
 // GENERANDO NUEVA RUTAS ORGANIZADAS
 
 Route::resource('courses', CourseController::class)->names('courses');
+
+Route::get('courses/{course}/curriculum', CoursesCurriculum::class)->name('courses.curriculum');
