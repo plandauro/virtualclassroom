@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Course;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
+
 class CoursePolicy
 {
     use HandlesAuthorization;
@@ -23,5 +24,13 @@ class CoursePolicy
     // METODO USADO PARA VISUALIZAR ESTADOS --> SE DENOMINA POLICY DE LARAVEL
     public function enrolled(User $user , Course $course){
         return $course->student->contains($user->id);
+    }
+
+    public function published(?User $user , Course $course){
+        if ($course->status == 3) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
