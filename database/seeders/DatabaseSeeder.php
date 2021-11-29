@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Storage::deleteDirectory('public/cursos');
-        Storage::makeDirectory('public/cursos');
+        Storage::deleteDirectory('public/courses');
+        Storage::makeDirectory('public/courses');
 
         //agregador para los permisos, con laravel PERMISSION
         $this->call(PermissionSeeder::class);
