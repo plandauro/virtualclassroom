@@ -1,7 +1,8 @@
 <div>
-    <x-slot name="course">
+    {{-- COMENTADO POR ACTUALIZACION EN SU RUTA --}}
+    {{-- <x-slot name="course">
         {{$course->slug}}
-    </x-slot>
+    </x-slot> --}}
 
     <h1 class="text-xl font-bold">LECCIONES DEL CURSO</h1>
     <hr class="mt-2 mb-6">
