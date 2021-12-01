@@ -8,6 +8,9 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\Lesson;
 use App\Observers\LessonObserver;
 
+use App\Models\Unity;
+use App\Observers\UnityObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -28,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Lesson::observe(LessonObserver::class);
+        Unity::observe(UnityObserver::class);
 
         Blade::directive('routeIs', function ($expression) {
             return "<?php if(Request::url() == route($expression)): ?>";
