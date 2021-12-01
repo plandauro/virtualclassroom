@@ -31,6 +31,10 @@
                             <i class="fas fa-eraser cursor-pointer text-red-500" wire:click="destroy({{$item}})"></i>
                         </div>
                     </header>
+
+                    <div>
+                        @livewire('instructor.courses-lesson', ['section' => $item], key($item->id))
+                    </div>
                 @endif
 
             </div>
@@ -40,7 +44,7 @@
     <div x-data="{open: false}">
         <a x-show="!open" x-on:click="open = true" class="flex items-center cursor-pointer">
             <i class="fas fa-plus-square text-2xl text-red-500 mr-2"></i>
-            Agregar nueva Seción
+            Agregar nueva Sección
         </a>
 
         <article class="card" x-show="open">
