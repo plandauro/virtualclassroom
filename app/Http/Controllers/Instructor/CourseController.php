@@ -159,4 +159,10 @@ class CourseController extends Controller
     {
         //
     }
+
+    public function status (Course $course){
+        $course->status = 2;
+        $course->save();
+        return back();
+    }
 }

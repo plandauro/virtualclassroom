@@ -15,3 +15,5 @@ Route::redirect('', 'instructor/courses');
 Route::resource('courses', CourseController::class)->names('courses');
 
 Route::get('courses/{course}/curriculum', CoursesCurriculum::class)->name('courses.curriculum');
+
+Route::post('courses/{course}/status', [CourseController::class, 'status'])->name('courses.status');
