@@ -274,6 +274,16 @@ return [
             'icon' => 'fas fa-fw fa-tags',
         ],
         [
+            'text' => 'Niveles',
+            'route'  => 'admin.levels.index',
+            'icon' => 'fas fa-chart-line',
+        ],
+        [
+            'text' => 'Precios',
+            'route'  => 'admin.prices.index',
+            'icon' => 'fab fa-cc-visa',
+        ],
+        [
             'text' => 'Pendiente de aprobación',
             'route'  => 'admin.courses.index',
             'icon' => 'fas fa-fw fa-tasks',

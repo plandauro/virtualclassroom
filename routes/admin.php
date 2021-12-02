@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\AreaController;
+use App\Http\Controllers\Admin\LevelController;
+use App\Http\Controllers\Admin\PriceController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('home');
 
@@ -17,6 +19,12 @@ Route::resource('users', UserController::class)->only(['index', 'edit', 'update'
 
 // RUTA PARA ADMINISTRAR AREAS
 Route::resource('areas', AreaController::class)->names('areas');
+
+// Ruta para CRUD Levels
+Route::resource('levels', LevelController::class)->names('levels');
+
+// Ruta para CRUD prices
+Route::resource('prices', PriceController::class)->names('prices');
 
 //Cursos en estado revisión
 Route::get('courses',[CourseController::class, 'index'])->name('courses.index');
