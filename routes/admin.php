@@ -5,15 +5,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\AreaController;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('home');
 
 Route::resource('roles', RoleController::class)->names('roles');
 
 //SE USA ONLY, PARA ELIMINAR LOS METODOS NO USADOS EN USER-CONTROLLER
-Route::resource('users', UserController::class)->only(['index', 'edit', 'update'])->names('users'); 
+Route::resource('users', UserController::class)->only(['index', 'edit', 'update'])->names('users');
+
+// RUTA PARA ADMINISTRAR AREAS
+Route::resource('areas', AreaController::class)->names('areas');
 
 //Cursos en estado revisión
 Route::get('courses',[CourseController::class, 'index'])->name('courses.index');

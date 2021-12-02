@@ -269,9 +269,14 @@ return [
         ],
         ['header' => 'OPCIONES DE CURSOS'],
         [
+            'text' => 'Áreas',
+            'route'  => 'admin.areas.index',
+            'icon' => 'fas fa-fw fa-tags',
+        ],
+        [
             'text' => 'Pendiente de aprobación',
             'route'  => 'admin.courses.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-tasks',
         ],
         [
             'text' => 'change_password',
