@@ -1166,6 +1166,10 @@ select {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+.my-8 {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
