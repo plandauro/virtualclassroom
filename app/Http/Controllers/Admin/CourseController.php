@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ApprovedCourse;
+use App\Mail\RejectCourse;
 
 class CourseController extends Controller
 {
@@ -32,9 +33,31 @@ class CourseController extends Controller
 
         //Envío de correo electronico
         $mail = new ApprovedCourse($course);
-        Mail::to($course->teacher->email)->send($mail);
+        Mail::to($course->teacher->email)->queue($mail);
 
 
         return redirect()->route('admin.courses.index')->with('info', 'El curso ha sido publicado con éxito.');
     }
+
+    public function observation(Course $course){
+        return view('admin.courses.observation', compact('course'));
+    }
+
+    public function reject(Request $request, Course $course){
+        $request->validate([
+            'body' => 'required'
+        ]);
+
+        $course->observation()->create($request->all());
+
+        $course->status = 1;
+        $course->save();
+
+        //Envío de correo electronico
+        $mail = new RejectCourse($course);
+        Mail::to($course->teacher->email)->queue($mail);
+
+        return redirect()->route('admin.courses.index')->with('info', 'El curso ha sido rechazado con éxito.');
+    }
+    
 }
