@@ -13,7 +13,7 @@ class CourseController extends Controller
     }
 
     public function show(Course $course){
-        $this->authorize('publisehd', $course);
+        $this->authorize('published', $course);
        
         $similares  = Course::where('area_id', $course->area_id)
                                 ->where('id', '!=', $course->id)
