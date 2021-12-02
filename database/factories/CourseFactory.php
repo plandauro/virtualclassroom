@@ -29,7 +29,7 @@ class CourseFactory extends Factory
             'description' => $this->faker->paragraph(),
             'status' => $this->faker->randomElement([Course::BORRADOR, Course::REVISION, Course::PUBLICADO]),
             'slug' => Str::slug($title),
-            'user_id' => 1,//User::all()->random()->id, //ESTO SE COMENTA PORQUE SE USARA EN ROLES Y PERMISOS CON MAS DE UN PROFESOR
+            'user_id' => $this->faker->randomElement([1, 2, 3, 4, 5]),//1,//User::all()->random()->id, //ESTO SE COMENTA PORQUE SE USARA EN ROLES Y PERMISOS CON MAS DE UN PROFESOR
             'area_id' => Area::all()->random()->id,
             'grade_id' => Grade::all()->random()->id,
             'price_id' => Price::all()->random()->id,

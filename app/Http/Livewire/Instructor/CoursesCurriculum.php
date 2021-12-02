@@ -6,8 +6,12 @@ use App\Models\Course;
 use App\Models\Unity;
 use Livewire\Component;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 class CoursesCurriculum extends Component
 {
+    use AuthorizesRequests;
+
     public $course, $section, $name;
 
     protected $rules = [
@@ -17,6 +21,8 @@ class CoursesCurriculum extends Component
     public function mount(Course $course){
         $this->course = $course;
         $this->section = new Unity();
+
+        $this->authorize('dicatated', $course);
     }
 
     public function render()

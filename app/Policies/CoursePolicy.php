@@ -22,14 +22,22 @@ class CoursePolicy
     }
 
     // METODO USADO PARA VISUALIZAR ESTADOS --> SE DENOMINA POLICY DE LARAVEL
-    public function enrolled(User $user , Course $course){
+    public function enrolled(User $user, Course $course){
         return $course->student->contains($user->id);
     }
 
-    public function published(?User $user , Course $course){
+    public function published(?User $user, Course $course){
         if ($course->status == 3) {
             return true;
         } else {
+            return false;
+        }
+    }
+
+    public function dicatated(User $user , Course $course){
+        if ($course->user_id == $user->id) {
+            return true;
+        }else{
             return false;
         }
     }
