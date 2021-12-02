@@ -36,7 +36,7 @@
             <!-- Page Content -->
             
             {{-- CONVIRTIENDO A PLANTILLA --}}
-            <div class="container py-8 grid grid-cols-5">
+            <div class="container py-8 grid grid-cols-5 gap-6">
                 <aside>
                     <h1 class="font-bold text-lg mb-4">Edición del Curso</h1>
                     <ul class="text-sm text-gray-600 mb-4">
@@ -55,6 +55,11 @@
                         <li class="ladding-7 mb-1 border-l-4 @routeIs('instructor.courses.students', $course) border-indigo-400 @else border-transparent @endif pl-2">
                             <a href="{{route('instructor.courses.students', $course)}}">Estudiantes</a>
                         </li>
+                        @if ($course->observation)
+                            <li class="ladding-7 mb-1 border-l-4 @routeIs('instructor.courses.students', $course) border-indigo-400 @else border-transparent @endif pl-2">
+                                <a href="{{route('instructor.courses.observation', $course)}}">Observaciones</a>
+                            </li>
+                        @endif
                     </ul>
 
                     @switch($course->status)
@@ -66,10 +71,10 @@
                             </form>
                             @break
                         @case(2)
-                            Este curso está en revisión
+                            <div class="card text-gray-500"><div class="card-body">Este curso está en revisión</div></div>
                             @break
                         @case(3)
-                            Este curso se encuentra publicado
+                            <div class="card text-gray-500"><div class="card-body">Este curso está publicado</div></div>
                             @break
                         @default
                             

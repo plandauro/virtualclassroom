@@ -23,3 +23,5 @@ Route::get('courses/{course}/goals', [CourseController::class, 'goals'])->name('
 
 Route::get('courses/{course}/students', CoursesStudents::class)->middleware('can:Actualizar cursos')->name('courses.students');
 
+Route::get('courses/{course}/observation', [CourseController::class, 'observation'])->name('courses.observation');
+
