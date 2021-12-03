@@ -93,5 +93,10 @@ class CourseStatus extends Component
         return $advance;
     }
 
+    public function download(){
+        // DESCARGANDO RECURSOS MEDIANTE LIVE WIRE
+        return response()->download(storage_path('app/' . $this->current->resource->url));
+    }
+
 
 }
