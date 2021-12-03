@@ -3,10 +3,17 @@
 @section('title', 'VirtualClassRoom')
 
 @section('content_header')
+    <a href="{{route('admin.levels.create')}}" class="btn btn-secondary float-right">Crear Nivel</a>
+
     <h1>Lista de Niveles</h1>
 @stop
 
 @section('content')
+    @if (session('info'))
+    <div class="alert alert-success">
+        {{session('info')}}
+    </div>
+    @endif
     <div class="card">
         <div class="card-body">
             <table class="table table-striped">
@@ -32,8 +39,8 @@
                             <td width="10px">
                                 <form action="{{route('admin.levels.destroy', $level)}}" method="POST">
                                     @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger2">Eliminar</button>
+                                    @method('delete')
+                                    <button class="btn btn-danger" type="submit">Eliminar</button>
                                 </form>
                             </td>
                         </tr>

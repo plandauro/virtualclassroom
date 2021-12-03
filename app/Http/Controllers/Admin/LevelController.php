@@ -15,6 +15,7 @@ class LevelController extends Controller
      */
     public function index()
     {
+        $levels = Level::all();
         return view('admin.levels.index', compact('levels'));
     }
 
@@ -25,7 +26,7 @@ class LevelController extends Controller
      */
     public function create()
     {
-        return view('admin.levels.create', compact('levels'));
+        return view('admin.levels.create');
     }
 
     /**
@@ -53,7 +54,7 @@ class LevelController extends Controller
      */
     public function show(Level $level)
     {
-        return view('admin.levels.show', compact('levels'));
+        return view('admin.levels.show', compact('level'));
     }
 
     /**
@@ -64,7 +65,7 @@ class LevelController extends Controller
      */
     public function edit(Level $level)
     {
-        return view('admin.levels.edit', compact('levels'));
+        return view('admin.levels.edit', compact('level'));
     }
 
     /**
@@ -77,7 +78,7 @@ class LevelController extends Controller
     public function update(Request $request, Level $level)
     {
         $request->validate([
-            'name' => 'required|unique:levels,name' . $level->id
+            'name' => 'required|unique:levels,name,' . $level->id
         ]);
 
         $level->update($request->all());
@@ -95,7 +96,7 @@ class LevelController extends Controller
     {
         $level->delete();
 
-        return redirect()->route('admin.levels.edit', $level)->with('info', 'El nivel se eliminó con éxito.');
+        return redirect()->route('admin.levels.index', $level)->with('info', 'El nivel se eliminó con éxito.');
 
     }
 }
