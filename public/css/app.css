@@ -1170,6 +1170,10 @@ select {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+.mx-12 {
+	margin-left: 3rem;
+	margin-right: 3rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -1788,6 +1792,9 @@ select {
 .p-0 {
 	padding: 0px;
 }
+.p-4 {
+	padding: 1rem;
+}
 .px-4 {
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -2105,6 +2112,10 @@ select {
 .text-yellow-300 {
 	--tw-text-opacity: 1;
 	color: rgba(252, 211, 77, var(--tw-text-opacity));
+}
+.text-blue-300 {
+	--tw-text-opacity: 1;
+	color: rgba(147, 197, 253, var(--tw-text-opacity));
 }
 .underline {
 	text-decoration: underline;
