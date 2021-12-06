@@ -127,7 +127,7 @@
 
                                 @can('Leer cursos')
                                     <x-jet-dropdown-link href="{{ route('instructor.courses.index') }}">
-                                        Intructor
+                                        Instructor
                                     </x-jet-dropdown-link>
                                 @endcan
 

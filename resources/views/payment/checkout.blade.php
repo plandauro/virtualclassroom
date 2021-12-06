@@ -14,7 +14,12 @@
                 </article>
 
                 <div class="flex justify-end mt-2 mb-4">
-                    <a href="{{route('payment.pay', $course)}}" class="btn btn-primary">Comprar este Curso</a>
+                    <a href="{{route('payment.pay', $course)}}" class="btn btn-primary">
+                        <div class="flex items-center">
+                        <p>Comprar Curso con</p>
+                        <i class="fab fa-cc-paypal text-4xl ml-2"></i>
+                        </div>
+                    </a>
                 </div>
 
                 <hr>
